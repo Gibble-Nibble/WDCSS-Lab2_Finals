@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // AUTO-PLAY: Change slide every 4 seconds
     setInterval(() => {
         changeSlide(1);
-    }, 4000);
+    }, 8000);
     
     // CHANGE SLIDE FUNCTION: Move to next/previous slide
     window.changeSlide = function(direction) {
