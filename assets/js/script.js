@@ -52,7 +52,7 @@ function initCarousel() {
             if (carouselInputs[currentSlide]) {
                 carouselInputs[currentSlide].checked = true;
             }
-        }, 5000);  // Move to next slide every 5 seconds
+        }, 8000);  // Move to next slide every x seconds
     }
 
     //
@@ -73,7 +73,7 @@ function initCarousel() {
             if (input.checked) {
                 currentSlide = index;        // Update current slide tracker
                 stopAutoplay();              // Stop automatic movement
-                setTimeout(startAutoplay, 8000);  // Resume auto-play after 8 seconds of no interaction
+                setTimeout(startAutoplay, 10000);  // Resume auto-play after 8 seconds of no interaction
             }
         });
     });
