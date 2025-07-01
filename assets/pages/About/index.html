@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../About/assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <title>My Website</title>
+</head>
+<body>
+    <nav class="navbar px-3">
+        <a class="navbar-brand" href="#">Robbie's Portfolio</a>
+
+        <ul class="navbar-nav flex-row ms-3">
+            <li class="nav-item me-3"><a class="nav-link" href="../../../index.html">Home</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="../../../assets/pages/Files/index.html">Files</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="../../../assets/pages/About/index.html">About</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="../../../assets/pages/Contact/index.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ORGANIZED ABOUT PAGE: Clean, simple layout with centered carousel -->
+    <div class="about-container">
+        <div class="about-content">
+            <!-- PROFILE SECTION: Clean introduction -->
+            <div class="profile-section">
+                <div class="profile-icon-container">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0_VB_vQ6Xij6NeLv9RBL75Xg1gX4g-6i6iw&s" alt="Robbie's Profile" class="profile-icon">
+                </div>
+                <h1 class="about-title">About Me</h1>
+                <p class="about-intro">Hi, my name is Wim Robert but you can call me Robbie or Wim. I'm an Animation & Game Developer student in FEU.</p>
+            </div>
+
+            <!-- CONTENT SECTION: Organized text content -->
+            <div class="content-section">
+                <h2 class="section-title">What kind of games will I develop in the future?</h2>
+                <div class="content-text">
+                    <p>I'm thinking of making a few games that will help me develop a game that I want to make in the future.</p>
+                    <p>I'll start off with small games that contain some of the mechanics that I would like to use and eventually combine them all to make a game that is ideal to my preferences.</p>
+                    <p class="inspiration-text">Here are some games that inspired me to make my own:</p>
+                </div>
+            </div>
+
+            <!-- CAROUSEL SECTION: Simple but beautiful image carousel -->
+            <div class="carousel-section">
+                <h3 class="carousel-title">Games that inspire me:</h3>
+                <div class="simple-carousel" id="gameCarousel">
+                    <div class="carousel-container">
+                        <div class="carousel-slides">
+                            <div class="slide active">
+                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa33EBUEaHm47R-Iar440RHnm3i6eHt8FDbg&s" alt="Game 1">
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn2.steamgriddb.com/icon/851300ee84c2b80ed40f51ed26d866fc.ico" alt="Game 2">
+                            </div>
+                            <div class="slide">
+                                <img src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/i/3367fa99-0ba6-454c-b947-683f1a9f896d/ddwh3ph-92b34e9e-b5fb-4507-a8e1-1253c19b21b9.png" alt="Game 3">
+                            </div>
+                            <div class="slide">
+                                <img src="https://cdn2.steamgriddb.com/icon/7316e11fe78963395fbab4a85d0b8f85/32/256x256.png" alt="Game 4">
+                            </div>
+                            <div class="slide">
+                                <img src="https://static.vecteezy.com/system/resources/previews/031/712/156/non_2x/assassin-s-creed-symbol-logo-free-vector.jpg" alt="Game 5">
+                            </div>
+                        </div>
+                        
+                        <!-- Side images for the scaling effect -->
+                        <div class="side-images">
+                            <div class="side-image left">
+                                <img src="https://static.vecteezy.com/system/resources/previews/031/712/156/non_2x/assassin-s-creed-symbol-logo-free-vector.jpg" alt="Previous">
+                            </div>
+                            <div class="side-image right">
+                                <img src="https://cdn2.steamgriddb.com/icon/851300ee84c2b80ed40f51ed26d866fc.ico" alt="Next">
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Navigation -->
+                    <button class="nav-btn prev" onclick="changeSlide(-1)">‹</button>
+                    <button class="nav-btn next" onclick="changeSlide(1)">›</button>
+                    
+                    <!-- Dots -->
+                    <div class="dots-container">
+                        <span class="dot active" onclick="goToSlide(0)"></span>
+                        <span class="dot" onclick="goToSlide(1)"></span>
+                        <span class="dot" onclick="goToSlide(2)"></span>
+                        <span class="dot" onclick="goToSlide(3)"></span>
+                        <span class="dot" onclick="goToSlide(4)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
