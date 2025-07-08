@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>My Files - Lab 1</title>
+</head>
+<body>
+    <nav class="navbar px-3">
+        <a class="navbar-brand" href="#">Robbie's Portfolio</a>
+
+        <ul class="navbar-nav flex-row ms-3">
+            <li class="nav-item me-3"><a class="nav-link" href="../../index.html">Home</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="../Files/index.html">Files</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="../About/index.html">About</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="../Contact/index.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- STATIC FILES GRID: Pure CSS version without JavaScript -->
+    <div class="files-container">
+        <div class="files-header">
+            <h1>My Files</h1>
+            <p class="files-subtitle">Static file gallery (Lab 1 - No JavaScript)</p>
+        </div>
+        
+        <div class="files-grid">
+            <!-- Static file cards with links -->
+            <a href="../../../TableOfElements.html" class="file-card" style="text-decoration: none; color: inherit;">
+                <div class="file-preview">
+                    <i class="fas fa-table" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="file-info">
+                    <h3>Table of Elements</h3>
+                    <p>A webpage that contains a digital table of elements.</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS</span>
+                        <span>📄 Document</span>
+                    </div>
+                    <div class="file-actions">
+                        <span class="file-btn file-btn-primary">View</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="../../../SDG.html" class="file-card" style="text-decoration: none; color: inherit;">
+                <div class="file-preview">
+                    <i class="fas fa-globe" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="file-info">
+                    <h3>SDG Project</h3>
+                    <p>Webpage about Sustainable Development Goals.</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS</span>
+                        <span>🌍 Web Page</span>
+                    </div>
+                    <div class="file-actions">
+                        <span class="file-btn file-btn-primary">View</span>
+                    </div>
+                </div>
+            </a>
+            
+            <a href="../../index.html" class="file-card" style="text-decoration: none; color: inherit;">
+                <div class="file-preview">
+                    <i class="fas fa-home" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="file-info">
+                    <h3>Portfolio Home</h3>
+                    <p>Main portfolio homepage with interactive features.</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS/JS</span>
+                        <span>🏠 Homepage</span>
+                    </div>
+                    <div class="file-actions">
+                        <span class="file-btn file-btn-primary">View</span>
+                    </div>
+                </div>
+            </a>
+            
+            <div class="file-card" style="opacity: 0.6;">
+                <div class="file-preview">
+                    <i class="fas fa-plus" style="font-size: 3rem; color: white;"></i>
+                </div>
+                <div class="file-info">
+                    <h3>Future Project</h3>
+                    <p>Placeholder for upcoming project.</p>
+                    <div class="file-meta">
+                        <span>Coming Soon</span>
+                        <span>📁 Folder</span>
+                    </div>
+                    <div class="file-actions">
+                        <span class="file-btn file-btn-secondary">Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        /* Enhanced file card styling for Lab 1 */
+        .files-header::after {
+            content: "Lab 1 - No JavaScript";
+            display: block;
+            background: #d1ecf1;
+            color: #0c5460;
+            padding: 0.75rem 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+            font-size: 0.9rem;
+            border: 1px solid #bee5eb;
+            text-align: center;
+        }
+
+        .file-card {
+            display: block;
+            transition: var(--transition);
+        }
+
+        .file-card:hover {
+            text-decoration: none !important;
+            color: inherit !important;
+        }
+
+        /* Staggered animation for file cards */
+        .file-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .file-card:nth-child(1) { animation-delay: 0.1s; }
+        .file-card:nth-child(2) { animation-delay: 0.2s; }
+        .file-card:nth-child(3) { animation-delay: 0.3s; }
+        .file-card:nth-child(4) { animation-delay: 0.4s; }
+        .file-card:nth-child(5) { animation-delay: 0.5s; }
+        .file-card:nth-child(6) { animation-delay: 0.6s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <title>Robbie's Portfolio - Home (Lab 1)</title>
+</head>
+<body>
+    <!-- NAVIGATION BAR: Fixed at the top of the page -->
+    <nav class="navbar px-3">
+        <!-- Brand/Logo: Links to the homepage -->
+        <a class="navbar-brand" href="#">Robbie's Portfolio</a>
+
+        <!-- Navigation Links -->
+        <ul class="navbar-nav flex-row ms-3">
+            <li class="nav-item me-3"><a class="nav-link" href="./index.html">Home</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="./pages/Files/index.html">Files</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="./pages/About/index.html">About</a></li>
+            <li class="nav-item me-3"><a class="nav-link" href="./pages/Contact/index.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- HERO SECTION: Clean, focused landing area -->
+    <section class="hero-section">
+        <div class="hero-content-simple">
+            <div class="hero-text-center">
+                <h1 class="hero-title-simple">
+                    Hi, I'm <span class="hero-name">Robbie</span>
+                </h1>
+                <h2 class="hero-subtitle">Animation & Game Developer</h2>
+                
+                <p class="hero-description-simple">
+                    Creating immersive experiences through animation and interactive media.
+                </p>
+                
+                <div class="hero-button-center">
+                    <a href="./pages/Files/index.html" class="btn btn-primary hero-btn-main" style="background-color: goldenrod; border-color: goldenrod; color: rgb(1, 54, 1);">View My Work</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED CAROUSEL SECTION: CSS-only carousel -->
+    <section class="featured-section">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            
+            <!-- CSS-only carousel using radio buttons -->
+            <div class="carousel">
+                <!-- Radio button controls (hidden but control the carousel) -->
+                <input type="radio" name="carousel" id="slide1" checked>
+                <input type="radio" name="carousel" id="slide2">
+                <input type="radio" name="carousel" id="slide3">
+                <input type="radio" name="carousel" id="slide4">
+              
+                <!-- Slides container -->
+                <div class="carouselSlides">
+                  <!-- SLIDE 1: Game Development -->
+                  <div class="carouselSlide">
+                    <div class="slide-content">
+                        <div class="slide-placeholder">
+                            <i class="fas fa-gamepad"></i>
+                            <h3>Game Project 1</h3>
+                            <p>An exciting adventure game with stunning visuals</p>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <!-- SLIDE 2: Animation Work -->
+                  <div class="carouselSlide">
+                    <div class="slide-content">
+                        <div class="slide-placeholder">
+                            <i class="fas fa-film"></i>
+                            <h3>Animation Reel</h3>
+                            <p>Character animations and motion graphics showcase</p>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <!-- SLIDE 3: 3D Modeling -->
+                  <div class="carouselSlide">
+                    <div class="slide-content">
+                        <div class="slide-placeholder">
+                            <i class="fas fa-cube"></i>
+                            <h3>3D Modeling</h3>
+                            <p>Environmental and character 3D modeling projects</p>
+                        </div>
+                    </div>
+                  </div>
+                  
+                  <!-- SLIDE 4: Interactive Media -->
+                  <div class="carouselSlide">
+                    <div class="slide-content">
+                        <div class="slide-placeholder">
+                            <i class="fas fa-code"></i>
+                            <h3>Interactive Media</h3>
+                            <p>Web-based interactive experiences and applications</p>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+              
+                <!-- Navigation dots -->
+                <div class="carouselNav">
+                  <label for="slide1"></label>
+                  <label for="slide2"></label>
+                  <label for="slide3"></label>
+                  <label for="slide4"></label>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SKILLS SECTION: Static progress bars (no JavaScript animation) -->
+    <section class="skills-section">
+        <div class="container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            
+            <div class="skills-grid">
+                <!-- SKILL CARD 1: Game Development -->
+                <div class="skill-card">
+                    <div class="skill-icon">🎮</div>
+                    <h3>Game Development</h3>
+                    <p>Unity, Unreal Engine, C#, JavaScript</p>
+                    <!-- Static progress bar - 30% width -->
+                    <div class="skill-bar">
+                        <div class="skill-progress static-progress" style="width: 30%;"></div>
+                    </div>
+                </div>
+                
+                <!-- SKILL CARD 2: Animation -->
+                <div class="skill-card">
+                    <div class="skill-icon">🎬</div>
+                    <h3>Animation</h3>
+                    <p>Maya, Blender, After Effects, 2D/3D Animation</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress static-progress" style="width: 45%;"></div>
+                    </div>
+                </div>
+                
+                <!-- SKILL CARD 3: Digital Art -->
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>Digital Art</h3>
+                    <p>Photoshop, Illustrator, Concept Art, UI/UX</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress static-progress" style="width: 80%;"></div>
+                    </div>
+                </div>
+                
+                <!-- SKILL CARD 4: Web Development -->
+                <div class="skill-card">
+                    <div class="skill-icon">💻</div>
+                    <h3>Web Development</h3>
+                    <p>HTML, CSS, JavaScript, React, Portfolio Sites</p>
+                    <div class="skill-bar">
+                        <div class="skill-progress static-progress" style="width: 40%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREVIEW SECTION: Static statistics (no animation) -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="about-content">
+                <!-- Left column: About text and call-to-action -->
+                <div class="about-text">
+                    <h2 class="section-title">About Me</h2>
+                    <p>
+                        I'm a passionate developer who loves creating immersive experiences through animation and interactive media. 
+                        With years of experience in game development and digital storytelling, I bring creativity and technical 
+                        expertise to every project.
+                    </p>
+                    <a href="./pages/About/index.html" class="btn btn-primary" style="background-color: rgb(7, 61, 7); border-color: rgb(7, 61, 7); color: goldenrod;">Learn More About Me</a>
+                </div>
+                
+                <!-- Right column: Static statistics -->
+                <div class="about-stats">
+                    <!-- STAT 1: Projects completed -->
+                    <div class="stat-item">
+                        <span class="stat-number">2</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    
+                    <!-- STAT 2: Years of experience -->
+                    <div class="stat-item">
+                        <span class="stat-number">4</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    
+                    <!-- STAT 3: Happy clients -->
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>

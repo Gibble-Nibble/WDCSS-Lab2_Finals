@@ -10,16 +10,19 @@
     <!-- GOOGLE FONTS: Professional typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- FONT AWESOME: Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
     <!-- BOOTSTRAP: CSS framework for responsive grid and components -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- CUSTOM JAVASCRIPT: Our advanced drag & drop and ripple effects -->
-    <script src="./files.js"></script>
+    <script src="./files.js" defer></script>
     
-    <title>My Website</title>
+    <title>My Files - Robbie's Portfolio</title>
 </head>
 <body>
     <nav class="navbar px-3">
@@ -65,53 +68,148 @@
             -->
             
             <div class="file-card" data-url="../projects/TableOfElements.html" draggable="true">
-                <div class="file-icon">ToE</div>
+                <div class="file-preview">
+                    <i class="fas fa-table"></i>
+                </div>
                 <div class="file-info">
                     <h3>Table of Elements</h3>
-                    <p>A webpage thaat contains a digital table of elements.</p>
+                    <p>A webpage that contains a digital table of elements.</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS</span>
+                        <span>📄 Document</span>
+                    </div>
+                    <div class="file-actions">
+                        <a href="../projects/TableOfElements.html" class="file-btn file-btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <button class="file-btn file-btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
                 </div>
             </div>
             
             <div class="file-card" data-url="../projects/SDG.html" draggable="true">
-                <div class="file-icon">SDG</div>
+                <div class="file-preview">
+                    <i class="fas fa-globe"></i>
+                </div>
                 <div class="file-info">
-                    <h3>SDG</h3>
-                    <p>Webpage about SDGs.</p>
+                    <h3>SDG Project</h3>
+                    <p>Webpage about Sustainable Development Goals.</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS</span>
+                        <span>🌍 Web Page</span>
+                    </div>
+                    <div class="file-actions">
+                        <a href="../projects/SDG.html" class="file-btn file-btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <button class="file-btn file-btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="file-card" data-url="../projects/Lab_1/index.html" draggable="true">
+                <div class="file-preview">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="file-info">
+                    <h3>Lab 1 - Pure CSS</h3>
+                    <p>HTML & CSS only version of the portfolio website (no JavaScript).</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS</span>
+                        <span>🎨 Pure CSS</span>
+                    </div>
+                    <div class="file-actions">
+                        <a href="../projects/Lab_1/index.html" class="file-btn file-btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <button class="file-btn file-btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
                 </div>
             </div>
             
             <div class="file-card" data-url="../../../index.html" draggable="true">
-                <div class="file-icon">PLCH</div>
+                <div class="file-preview">
+                    <i class="fas fa-home"></i>
+                </div>
                 <div class="file-info">
-                    <h3>Placeholder</h3>
-                    <p>Placeholder</p>
+                    <h3>Portfolio Home</h3>
+                    <p>Main portfolio homepage with interactive features.</p>
+                    <div class="file-meta">
+                        <span>HTML/CSS/JS</span>
+                        <span>🏠 Homepage</span>
+                    </div>
+                    <div class="file-actions">
+                        <a href="../../../index.html" class="file-btn file-btn-primary">
+                            <i class="fas fa-eye"></i> View
+                        </a>
+                        <button class="file-btn file-btn-secondary">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                    </div>
                 </div>
             </div>
             
             <!-- PLACEHOLDER CARDS: For future content -->
-            <!-- These demonstrate the expandable nature of the system -->
-            
             <div class="file-card" data-url="#" draggable="true">
-                <div class="file-icon">PROJ</div>
+                <div class="file-preview">
+                    <i class="fas fa-plus"></i>
+                </div>
                 <div class="file-info">
-                    <h3>Placeholder</h3>
-                    <p>Placeholder</p>
+                    <h3>Future Project</h3>
+                    <p>Placeholder for upcoming project.</p>
+                    <div class="file-meta">
+                        <span>Coming Soon</span>
+                        <span>📁 Folder</span>
+                    </div>
+                    <div class="file-actions">
+                        <button class="file-btn file-btn-secondary" disabled>
+                            <i class="fas fa-clock"></i> Soon
+                        </button>
+                    </div>
                 </div>
             </div>
             
             <div class="file-card" data-url="#" draggable="true">
-                <div class="file-icon">RES</div>
+                <div class="file-preview">
+                    <i class="fas fa-image"></i>
+                </div>
                 <div class="file-info">
-                    <h3>Placeholder</h3>
-                    <p>Placeholder</p>
+                    <h3>Gallery</h3>
+                    <p>Image gallery and visual portfolio.</p>
+                    <div class="file-meta">
+                        <span>Images</span>
+                        <span>🖼️ Gallery</span>
+                    </div>
+                    <div class="file-actions">
+                        <button class="file-btn file-btn-secondary" disabled>
+                            <i class="fas fa-clock"></i> Soon
+                        </button>
+                    </div>
                 </div>
             </div>
             
             <div class="file-card" data-url="#" draggable="true">
-                <div class="file-icon">DOCS</div>
+                <div class="file-preview">
+                    <i class="fas fa-folder"></i>
+                </div>
                 <div class="file-info">
-                    <h3>Placeholder</h3>
-                    <p>Placeholder</p>
+                    <h3>Resources</h3>
+                    <p>Additional resources and documentation.</p>
+                    <div class="file-meta">
+                        <span>Various</span>
+                        <span>📚 Resources</span>
+                    </div>
+                    <div class="file-actions">
+                        <button class="file-btn file-btn-secondary" disabled>
+                            <i class="fas fa-clock"></i> Soon
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
