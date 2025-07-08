@@ -1,7 +1,7 @@
 // Contact Form Validation and Functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Google Apps Script URL - Replace with your actual URL
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/a/macros/fit.edu.ph/s/AKfycbwmD6b3qq9WuXzZ_F5l10M7CvW2BC_E7p_7MxQ-p1___Bzw48fXnsDTuR-7MSi2NSER/exec"; // Google Apps Script URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwoID2UZ6VM2G79kLwzZ4hvG0H0sQpb118IR89VnHT1Tx7WH-SSM15PCnI4DO7Dfn0I/exec"; // Google Apps Script URL
     
     const form = document.getElementById('contactForm');
     const nameInput = document.getElementById('name');
@@ -151,103 +151,47 @@ document.addEventListener('DOMContentLoaded', function() {
                 timestamp: new Date().toLocaleString()
             };
             
-            console.log('Sending data:', formData);
-            console.log('To URL:', GOOGLE_SCRIPT_URL);
-            
             // Send to Google Sheets
             if (GOOGLE_SCRIPT_URL !== "YOUR_GOOGLE_APPS_SCRIPT_URL") {
+                console.log('Sending data to Google Sheets:', formData);
+                console.log('Google Script URL:', GOOGLE_SCRIPT_URL);
+                
                 fetch(GOOGLE_SCRIPT_URL, {
                     method: 'POST',
                     mode: 'no-cors',
-                    body: JSON.stringify(formData),
                     headers: {
-                        'Content-Type': 'application/json'
-                    }
+                        'Content-Type': 'application/x-www-form-urlencoded',
+                    },
+                    body: new URLSearchParams({
+                        'name': formData.name,
+                        'email': formData.email,
+                        'phone': formData.phone,
+                        'subject': formData.subject,
+                        'message': formData.message,
+                        'timestamp': formData.timestamp
+                    })
                 })
                 .then(response => {
-                    console.log('Response received:', response);
-                    console.log('Response status:', response.status);
-                    console.log('Response type:', response.type);
-                    
-                    // With no-cors mode, we can't read the response
-                    // But if we get here, the request was sent successfully
-                    if (response.type === 'opaque') {
-                        // This means the request was sent but we can't read the response
-                        // This is normal with no-cors mode
-                        return { result: 'success' };
-                    }
-                    
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-                    
-                    return response.json();
+                    console.log('Website: Got response:', response);
+                    console.log('Website: Response status:', response.status);
+                    // With no-cors mode, we can't read the response body
+                    // but if we get here, the request was successful
+                    return 'success';
                 })
                 .then(data => {
-                    console.log('Response data:', data);
-                    
-                    if (data.result === 'success') {
-                        // Reset form
-                        form.reset();
-                        subjectCounter.textContent = '0';
-                        messageCounter.textContent = '0';
-                        
-                        // Clear any error messages
-                        clearAllErrors();
-                        
-                        // Re-enable button
-                        submitBtn.disabled = false;
-                        submitBtn.textContent = 'Send Message';
-                        
-                        // Show success modal
-                        showModal();
-                    } else {
-                        throw new Error('Failed to submit form');
-                    }
+                    console.log('Website: Form submitted successfully');
+                    // Reset form and show success
+                    form.reset();
+                    subjectCounter.textContent = '0';
+                    messageCounter.textContent = '0';
+                    clearAllErrors();
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    showModal();
                 })
                 .catch(error => {
-                    console.error('Error details:', error);
-                    console.error('Error message:', error.message);
-                    
-                    // For CORS errors with Google Apps Script, the request might still succeed
-                    // even though we get an error in the browser
-                    if (error.message.includes('Failed to fetch') || error.message.includes('CORS')) {
-                        console.log('CORS error detected - this is normal with Google Apps Script');
-                        console.log('The data was likely still sent successfully');
-                        
-                        // Ask user to check their Google Sheet
-                        const checkSheet = confirm(
-                            'There was a CORS error (this is normal with Google Sheets).\n\n' +
-                            'The data was likely still sent successfully.\n\n' +
-                            'Click OK if you want to proceed as if it worked, or Cancel to try again.'
-                        );
-                        
-                        if (checkSheet) {
-                            // Treat as success
-                            form.reset();
-                            subjectCounter.textContent = '0';
-                            messageCounter.textContent = '0';
-                            clearAllErrors();
-                            submitBtn.disabled = false;
-                            submitBtn.textContent = 'Send Message';
-                            showModal();
-                            return;
-                        }
-                    }
-                    
-                    // More detailed error message
-                    let errorMsg = 'Error sending message. ';
-                    if (error.message.includes('Failed to fetch')) {
-                        errorMsg += 'Network issue or CORS error. Check console for details.';
-                    } else if (error.message.includes('Failed to submit form')) {
-                        errorMsg += 'Server returned an error. Check your Google Apps Script.';
-                    } else {
-                        errorMsg += 'Please try again or check the console for details.';
-                    }
-                    
-                    alert(errorMsg);
-                    
-                    // Re-enable button
+                    console.error('Error:', error);
+                    alert('Error sending message. Please try again.');
                     submitBtn.disabled = false;
                     submitBtn.textContent = 'Send Message';
                 });

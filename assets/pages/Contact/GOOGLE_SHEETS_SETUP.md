@@ -21,33 +21,35 @@
 ```javascript
 function doPost(e) {
   try {
-    // Log incoming request for debugging
-    console.log("Received request:", e);
+    console.log("Full event object:", e);
+    console.log("Event parameters:", e.parameter);
+    console.log("Post data:", e.postData);
     
-    // Check if postData exists
-    if (!e || !e.postData || !e.postData.contents) {
-      throw new Error("Invalid request format - missing postData");
-    }
-    
-    // Get the active sheet
     var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+    var data;
     
-    // Parse the incoming data
-    var data = JSON.parse(e.postData.contents);
-    console.log("Parsed data:", data);
-    
-    // Validate required fields
-    if (!data.name || !data.email || !data.message) {
-      throw new Error("Missing required fields");
+    // Handle different ways data might come in
+    if (e.postData && e.postData.contents) {
+      // Data from JSON POST request
+      console.log("Parsing JSON data:", e.postData.contents);
+      data = JSON.parse(e.postData.contents);
+    } else if (e.parameter) {
+      // Data from form POST or URL parameters
+      console.log("Using parameter data:", e.parameter);
+      data = e.parameter;
+    } else {
+      throw new Error("No data received");
     }
+    
+    console.log("Processed data:", data);
     
     // Add the data to the sheet
     sheet.appendRow([
-      data.name,
-      data.email,
+      data.name || '',
+      data.email || '',
       data.phone || '',
       data.subject || '',
-      data.message,
+      data.message || '',
       data.timestamp || new Date().toLocaleString()
     ]);
     
@@ -59,14 +61,62 @@ function doPost(e) {
     ).setMimeType(ContentService.MimeType.JSON);
     
   } catch (error) {
-    // Log error for debugging
     console.error("Error in doPost:", error.toString());
+    console.error("Full error:", error);
     
-    // Return error response
+    // Still try to log what we received for debugging
+    try {
+      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+      sheet.appendRow([
+        "ERROR: " + new Date().toLocaleString(),
+        error.toString(),
+        JSON.stringify(e.postData || {}),
+        JSON.stringify(e.parameter || {}),
+        "Debug row",
+        new Date().toLocaleString()
+      ]);
+    } catch (debugError) {
+      console.error("Could not write debug info:", debugError);
+    }
+    
     return ContentService.createTextOutput(
       JSON.stringify({ result: "error", message: error.toString() })
     ).setMimeType(ContentService.MimeType.JSON);
   }
+}
+
+// Test function that mimics the actual web request
+function testWebRequest() {
+  var testEvent = {
+    postData: {
+      contents: JSON.stringify({
+        name: "Web Test User",
+        email: "webtest@example.com",
+        phone: "09123456789",
+        subject: "Web Test Subject",
+        message: "Test message from web simulation",
+        timestamp: new Date().toLocaleString()
+      }),
+      type: "application/json"
+    }
+  };
+  
+  var result = doPost(testEvent);
+  console.log("Web test result:", result.getContent());
+}
+
+// Simple direct test
+function testDirectWrite() {
+  var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
+  sheet.appendRow([
+    "Direct Test " + new Date().getTime(),
+    "direct@test.com",
+    "09123456789",
+    "Direct Subject",
+    "Direct message",
+    new Date().toLocaleString()
+  ]);
+  console.log("Direct test completed");
 }
 ```
 
