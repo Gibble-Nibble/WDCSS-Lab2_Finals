@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
 /*
     CAROUSEL FUNCTIONALITY
     
-    Enhanced carousel with these features:
+    Features:
     - Auto-play: Automatically moves to next slide every 5 seconds
     - User interaction: Stops auto-play when user clicks, resumes after 8 seconds
     - Keyboard navigation: Arrow keys control slides
