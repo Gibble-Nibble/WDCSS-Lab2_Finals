@@ -30,6 +30,11 @@ document.addEventListener('DOMContentLoaded', function() {
         // CLICK EVENT WITH RIPPLE: Creates Material Design-style click feedback
         // The ripple effect provides visual feedback that the user has clicked
         card.addEventListener('click', function(e) {
+            // CHECK IF CLICK IS ON A BUTTON: Prevent navigation if clicking buttons
+            if (e.target.closest('.file-btn') || e.target.closest('button')) {
+                return; // Don't navigate, let the button handle its own click
+            }
+            
             createRipple(e, this);  // 'this' refers to the clicked card
             
             // DELAYED NAVIGATION: Wait for ripple animation to complete
@@ -258,4 +263,17 @@ document.addEventListener('DOMContentLoaded', function() {
     // START OBSERVING: Watch the files grid for any child element changes
     // childList: true means we want to know when child elements are added/removed
     observer.observe(filesGrid, { childList: true });
+    
+    // DOWNLOAD BUTTON CLICK HANDLER: Show modal instead of downloading
+    // Add event listeners to all download buttons to show the modal
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.file-btn-secondary')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            // Show the download not available modal
+            const downloadModal = new bootstrap.Modal(document.getElementById('downloadModal'));
+            downloadModal.show();
+        }
+    });
 });
