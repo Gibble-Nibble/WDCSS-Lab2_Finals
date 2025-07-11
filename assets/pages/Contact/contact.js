@@ -1,7 +1,7 @@
 // Contact Form Validation and Functionality
 document.addEventListener('DOMContentLoaded', function() {
     // Google Apps Script URL - Replace with your actual URL
-    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbwoID2UZ6VM2G79kLwzZ4hvG0H0sQpb118IR89VnHT1Tx7WH-SSM15PCnI4DO7Dfn0I/exec"; // Google Apps Script URL
+    const GOOGLE_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbywcwUWQqGQlQ7_BM89Mx1e6SvmMRYWB4km7teRcEJumer-tpCn1Qyvt4VdRNt-psNr/exec"; // Google Apps Script URL
     
     const form = document.getElementById('contactForm');
     const nameInput = document.getElementById('name');
