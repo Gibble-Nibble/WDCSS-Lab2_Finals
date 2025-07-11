@@ -180,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 })
                 .then(data => {
                     console.log('Website: Form submitted successfully');
-                    // Reset form and show success
+                    // Reset form and show success (LOOP)
                     form.reset();
                     subjectCounter.textContent = '0';
                     messageCounter.textContent = '0';
