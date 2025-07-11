@@ -59,8 +59,7 @@
     </section>
 
     <!-- 
-        FEATURED CAROUSEL SECTION: Showcases different project types
-        - Uses CSS-only carousel (no JavaScript libraries needed!)
+        FEATURED CAROUSEL SECTION:
         - Radio buttons control which slide is visible
         - Smooth CSS transitions between slides
     -->
@@ -69,7 +68,7 @@
             <h2 class="section-title">Featured Projects</h2>
             
             <!-- 
-                CAROUSEL STRUCTURE: How the CSS-only carousel works:
+                CAROUSEL STRUCTURE:
                 1. Radio buttons (hidden) act as "state" - only one can be checked at a time
                 2. CSS uses :checked selector to show the corresponding slide
                 3. Labels act as clickable navigation dots
@@ -77,7 +76,7 @@
             -->
             <div class="carousel">
                 <!-- 
-                    RADIO BUTTON CONTROLS: These are hidden but control the carousel
+                    RADIO BUTTON CONTROLS:
                     - Only one can be checked at a time (same "name" attribute)
                     - "checked" attribute makes slide1 the default
                 -->
@@ -87,7 +86,7 @@
                 <input type="radio" name="carousel" id="slide4">
               
                 <!-- 
-                    SLIDES CONTAINER: All slides in a horizontal row
+                    SLIDES CONTAINER:
                     - Width is 400% (4 slides × 100% each)
                     - CSS transform: translateX() moves this container left/right
                     - Each slide is 25% wide (100% ÷ 4 slides)
